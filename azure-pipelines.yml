@@ -1,5 +1,9 @@
 pool: local-agent-pool
 steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '6.0.4'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
