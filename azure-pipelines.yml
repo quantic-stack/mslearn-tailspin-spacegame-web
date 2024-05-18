@@ -4,6 +4,11 @@ steps:
   inputs:
     packageType: 'sdk'
     version: '6.0.422'
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
